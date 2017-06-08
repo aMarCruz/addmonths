@@ -1,0 +1,17 @@
+node_modules
+.tmp
+bower_components
+node_modules
+.vscode
+
+# OS files & folders
+._*
+.cache
+.DS_Store
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.Trashes
+Icon
+
+.vscode
