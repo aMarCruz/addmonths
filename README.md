@@ -19,9 +19,9 @@ addMonths(date, count)
 #### Example
 
 ```js
-addMonths(new Date(2017, 1, 1), 2)    // ==> 2017-03-01
-addMonths(new Date(2017, 1, 1), -1)   // ==> 2016-12-01
-addMonths(new Date(2016, 1, 31), 1)   // ==> 2016-02-29
+addMonths(new Date(2017, 0, 1), 2)    // 2017-01-01 ==> 2017-03-01
+addMonths(new Date(2017, 0, 1), -1)   // 2017-01-01 ==> 2016-12-01
+addMonths(new Date(2016, 0, 31), 1)   // 2017-01-31 ==> 2016-02-29
 ```
 
 ## License
