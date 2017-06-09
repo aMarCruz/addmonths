@@ -1,6 +1,6 @@
 {
   "name": "addmonths",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "Adds or sustract X months to any JavaScript Date.",
   "main": "dist/addmonts.js",
   "module": "dist/addmonths.es6.js",
@@ -31,6 +31,10 @@
     "url": "https://github.com/aMarCruz"
   },
   "homepage": "https://github.com/aMarCruz/addmonths",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aMarCruz/addmonths"
+  },
   "license": "MIT",
   "devDependencies": {
     "rollup": "^0.42.0",

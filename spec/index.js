@@ -21,7 +21,9 @@ function err(data, result) {
 var table = [
   [1, dt(2016, 1, 31), dt(2016, 2, 29)],      // 2016 was a leap year
   [1, dt(2017, 1, 31), dt(2017, 2, 28)],
-  [1, dt(2018, 1, 1),  dt(2018, 2, 1)]
+  [1, dt(2018, 1, 1),  dt(2018, 2, 1)],
+  [-1, dt(2018, 1, 1), dt(2017, 12, 1)],
+  [12, dt(1900, 2, 3), dt(1901, 2, 3)]
 ]
 
 console.log('Testing addMonths...')

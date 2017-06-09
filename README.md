@@ -13,7 +13,15 @@ npm i addmonths
 #### Usage
 
 ```js
-addMonths(new Date(), 2)
+addMonths(date, count)
+```
+
+#### Example
+
+```js
+addMonths(new Date(2017, 1, 1), 2)    // ==> 2017-03-01
+addMonths(new Date(2017, 1, 1), -1)   // ==> 2016-12-01
+addMonths(new Date(2016, 1, 31), 1)   // ==> 2016-02-29
 ```
 
 ## License
