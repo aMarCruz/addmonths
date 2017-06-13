@@ -1,8 +1,5 @@
-(function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-	typeof define === 'function' && define.amd ? define(factory) :
-	(global.addMonths = factory());
-}(this, (function () { 'use strict';
+(function () {
+'use strict';
 
 function addMonths(startdate, count) {
   if (startdate && startdate.getDate) {
@@ -25,6 +22,12 @@ function addMonths(startdate, count) {
   return startdate
 }
 
-return addMonths;
+Object.defineProperty(Date.prototype, 'addMonths', {
+  value: function (count) {
+    return isNaN(this) ? new Date(this) : addMonths(this, count)
+  },
+  configurable: true,
+  writable: true
+});
 
-})));
+}());

@@ -1,20 +1,21 @@
 {
   "name": "addmonths",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Adds or sustract X months to any JavaScript Date.",
-  "main": "dist/addmonts.js",
-  "module": "dist/addmonths.es6.js",
-  "jsnext:main": "dist/addmonths.es6.js",
-  "browser": "dist/addmonths.umd.js",
+  "main": "dist/addmonths.js",
+  "module": "dist/addmonths.esm.js",
+  "jsnext:main": "dist/addmonths.esm.js",
+  "browser": "dist/addmonths.js",
   "scripts": {
-    "test": "node spec/index.js",
-    "pretest": "rollup -c -f cjs",
-    "build": "rollup -c",
-    "prepublish": "npm t && npm run build"
+    "test": "jasmine && karma start",
+    "pretest": "rollup -c",
+    "build": "rm -rf dist/ && rollup -c",
+    "prepublish": "rm -rf dist/ && npm t"
   },
   "files": [
-    "*.js",
-    "dist"
+    "auto.js",
+    "dist",
+    "src"
   ],
   "keywords": [
     "add",
@@ -27,7 +28,7 @@
   ],
   "author": {
     "name": "aMarCruz",
-    "email": "amarcruzbox-git@yahoo.com",
+    "email": "amarcruz@yahoo.com",
     "url": "https://github.com/aMarCruz"
   },
   "homepage": "https://github.com/aMarCruz/addmonths",
@@ -37,7 +38,15 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "jasmine": "^2.6.0",
+    "jasmine-spec-reporter": "^4.1.0",
+    "karma": "^1.7.0",
+    "karma-chrome-launcher": "^2.1.1",
+    "karma-firefox-launcher": "^1.0.1",
+    "karma-jasmine": "^1.1.0",
+    "karma-phantomjs-launcher": "^1.0.4",
     "rollup": "^0.42.0",
-    "rollup-plugin-buble": "^0.15.0"
+    "rollup-plugin-buble": "^0.15.0",
+    "rollup-plugin-cleanup": "^1.0.0"
   }
 }

@@ -1,0 +1,33 @@
+{
+  "name": "addmonths",
+  "description": "Adds or sustract X months to any JavaScript Date.",
+  "main": "dist/addmonths.js",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "add",
+    "date",
+    "datetime",
+    "months",
+    "leap",
+    "year",
+    "javascript"
+  ],
+  "authors": [
+    "aMarCruz <amarcruz@yahoo.com> (https://github.com/aMarCruz)"
+  ],
+  "homepage": "https://github.com/aMarCruz/addmonths",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/aMarCruz/addmonths.git"
+  },
+  "ignore": [
+    "node_modules",
+    "bower_components",
+    "spec"
+  ]
+}

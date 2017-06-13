@@ -1,10 +1,14 @@
-node_modules
-.tmp
+# Common files
+# --------------------
+*.bak
+*.tmp
+*.log
+
 bower_components
 node_modules
-.vscode
 
 # OS files & folders
+# --------------------
 ._*
 .cache
 .DS_Store
@@ -14,4 +18,41 @@ node_modules
 .Trashes
 Icon
 
+# Windows
+# --------------------
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+*.lnk
+
+# Sublime Text
+# --------------------
+*.sublime-project
+*.sublime-workspace
+
+# IntelliJ Files
+# --------------------
+*.iml
+*.ipr
+*.iws
+.idea/
+out/
+
+# --------------------
+# Eclipse
+# --------------------
+.project
+.metadata
+*.bak
+.classpath
+.settings/
+
+# VS Code
+# --------------------
 .vscode
+jsconfig.json
