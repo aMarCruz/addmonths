@@ -7,7 +7,7 @@ Adds or sustract X months to any JavaScript Date.
 
 **IMPORTANT:**
 
-Please read the [What's New](#whats_new) section.
+Please read the [What's New](#whats-new) section.
 
 ## Install
 
