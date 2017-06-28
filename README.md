@@ -1,3 +1,4 @@
+[![codebeat badge][cq-image]][cq-url]
 [![npm Version][npm-image]][npm-url]
 [![License][license-image]][license-url]
 
@@ -31,7 +32,7 @@ newdate = addMonths(startdate, count)
 
 The `addMonths` function returns the date occurring _count_ months after _startdate_ or, if _count_ is negative, the date occurring _count_ months before _startdate_.
 
-If _startdate_ is _falsy_ or not a date, returns _startdate_ without changes.
+If _startdate_ is not a date, returns _startdate_ without changes.
 
 If _count_ is zero returns a new `Date` object with the same value as _startdate_.
 
@@ -75,3 +76,5 @@ Copyright (c) 2017 Alberto Martínez (https://github.com/aMarCruz)
 [npm-url]:        https://www.npmjs.com/package/addmonths
 [license-image]:  https://img.shields.io/npm/l/express.svg
 [license-url]:    https://github.com/aMarCruz/jscc-brunch/blob/master/LICENSE
+[cq-image]:       https://codebeat.co/badges/c44cf621-7412-4d0d-a132-cf09ee560d48
+[cq-url]:         https://codebeat.co/projects/github-com-amarcruz-addmonths-master

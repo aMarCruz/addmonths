@@ -1,19 +1,24 @@
 {
   "name": "addmonths",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Adds or sustract X months to any JavaScript Date.",
   "main": "dist/addmonths.js",
   "module": "dist/addmonths.esm.js",
   "jsnext:main": "dist/addmonths.esm.js",
   "browser": "dist/addmonths.js",
+  "types": "./index.d.ts",
+  "engines": {
+    "node": ">=0.12"
+  },
   "scripts": {
-    "test": "jasmine && karma start",
+    "test": "jasmine && karma start ./spec/karma.conf.js",
     "pretest": "rollup -c",
     "build": "rm -rf dist/ && rollup -c",
     "prepublish": "rm -rf dist/ && npm t"
   },
   "files": [
     "auto.js",
+    "index.d.ts",
     "dist",
     "src"
   ],

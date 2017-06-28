@@ -18,10 +18,10 @@ module.exports = function (config) {
     frameworks: ['jasmine'],
 
     files: [
-      'dist/addmonths.js',
-      'dist/addmonths.auto.js',
-      'spec/test-info.js',
-      'spec/test.spec.js'
+      '../dist/addmonths.js',
+      '../dist/addmonths.auto.js',
+      'test-info.js',
+      'test.spec.js'
     ],
 
     exclude: [],

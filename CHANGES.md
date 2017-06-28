@@ -1,5 +1,11 @@
 # Changes for addMonths
 
+#### jun/2006 - v0.3.0
+
+* Returns NaN for Dates evaluated to NaN.
+* Include TypeScript def (CommonJS).
+* Moved karma configuration to spec/.
+
 #### jun/2006 - v0.2.0
 
 Lots of changes in this version.
