@@ -4,7 +4,7 @@
 
 # addMonths
 
-Adds or sustract X months to any JavaScript Date.
+Adds or sustract _X_ months to any JavaScript Date.
 
 **IMPORTANT:**
 
@@ -50,7 +50,7 @@ addMonths('2017-06-12', 1)            // the same string
 and if you loaded addmonths.auto:
 
 ```js
-const date = new Date().goMonth(3)
+const date = new Date().addMonths(3)
 ```
 
 ## What's New
