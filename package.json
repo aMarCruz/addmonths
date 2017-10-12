@@ -1,6 +1,6 @@
 {
   "name": "addmonths",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Adds or sustract X months to any JavaScript Date.",
   "main": "dist/addmonths.js",
   "module": "dist/addmonths.esm.js",
