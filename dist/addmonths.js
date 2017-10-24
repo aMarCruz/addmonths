@@ -10,7 +10,7 @@ function addMonths(startdate, count) {
     if (!isNaN(date) && (count |= 0)) {
       var offset = +startdate - date.setUTCHours(12, 0, 0, 0);
       var day = date.getUTCDate();
-      date.setUTCMonth(date.getUTCMonth() + (count | 0), 2);
+      date.setUTCMonth(date.getUTCMonth() + count, 2);
       var month = date.getUTCMonth();
       date.setUTCDate(day);
       if (date.getUTCMonth() !== month) {

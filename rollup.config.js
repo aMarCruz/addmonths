@@ -3,28 +3,31 @@ import cleanup from 'rollup-plugin-cleanup'
 
 export default [
   {
-    entry: 'src/addmonths.js',
-    dest: 'dist/addmonths.js',
-    format: 'umd',
-    moduleName: 'addMonths',
+    input: 'src/addmonths.js',
+    name: 'addMonths',
+    output: {
+      file: 'dist/addmonths.js', format: 'umd'
+    },
     plugins: [
       buble(),
       cleanup()
     ]
   },
   {
-    entry: 'src/addmonths.js',
-    dest: 'dist/addmonths.esm.js',
-    format: 'es',
+    input: 'src/addmonths.js',
+    output: {
+      file: 'dist/addmonths.esm.js', format: 'es'
+    },
     plugins: [
       buble(),
       cleanup()
     ]
   },
   {
-    entry: 'src/addmonths_auto.js',
-    dest: 'dist/addmonths.auto.js',
-    format: 'iife',
+    input: 'src/addmonths_auto.js',
+    output: {
+      file: 'dist/addmonths.auto.js', format: 'iife'
+    },
     plugins: [
       buble(),
       cleanup()

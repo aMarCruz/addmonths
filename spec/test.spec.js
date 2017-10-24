@@ -33,7 +33,7 @@ function ut(s) {
 
 describe('addMonths', function () {
 
-  it('must returns a new instance (for valid dates) if count is falsy.', function () {
+  it('must returns a new instance if date is valid and count is falsy.', function () {
     var date = new Date()
     var test = new Date(+date)
     var result
@@ -49,12 +49,20 @@ describe('addMonths', function () {
     expect(+result).toBe(+test)
   })
 
-  it('must returns the same object for valid dates.', function () {
-    var dnan = new Date('@')  // Invalid Date
-    var dnull = null
-    var dstr = '2015-02-01T00:00:00Z'
+  it('must returns a new instance for empty dates (NaN).', function () {
+    var empty = new Date('@')  // Date object with empty content
 
-    expect(isNaN(addMonths(dnan, 0))).toBe(true)
+    expect(addMonths(empty, 0)).not.toBe(empty)
+  })
+
+  it('must returns the same object for invalid dates.', function () {
+    var dnum  = 1234567890
+    var dobj  = {}
+    var dnull = null
+    var dstr  = '2015-02-01T00:00:00Z'
+
+    expect(addMonths(dnum, 0)).toBe(dnum)
+    expect(addMonths(dobj, 0)).toBe(dobj)
     expect(addMonths(dnull, 0)).toBe(dnull)
     expect(addMonths(dstr, 0)).toBe(dstr)
   })

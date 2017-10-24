@@ -1,5 +1,10 @@
 # Changes for addMonths
 
+#### oct/2017 - v1.0.0
+* Production ready version.
+* Updated tests.
+* Updated devDependencies.
+
 #### oct/2017 - v0.3.1
 * Fixes typo in the README.
 
