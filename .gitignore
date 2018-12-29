@@ -56,3 +56,4 @@ out/
 # --------------------
 .vscode
 jsconfig.json
+.nyc_output

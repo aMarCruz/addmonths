@@ -8,7 +8,7 @@ import addMonths from './addmonths'
 // eslint-disable-next-line no-extend-native
 Object.defineProperty(Date.prototype, 'addMonths', {
   value: function (count) {
-    return isNaN(this) ? new Date(this) : addMonths(this, count)
+    return addMonths(this, count)
   },
   configurable: true,
   writable: true

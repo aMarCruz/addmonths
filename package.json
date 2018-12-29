@@ -1,6 +1,6 @@
 {
   "name": "addmonths",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Adds or sustract X months to any JavaScript Date.",
   "main": "dist/addmonths.js",
   "module": "dist/addmonths.esm.js",
@@ -48,9 +48,9 @@
     "karma-chrome-launcher": "^2.2.0",
     "karma-firefox-launcher": "^1.0.1",
     "karma-jasmine": "^1.1.0",
-    "karma-phantomjs-launcher": "^1.0.4",
     "rollup": "^0.50.0",
     "rollup-plugin-buble": "^0.16.0",
     "rollup-plugin-cleanup": "^2.0.0"
-  }
+  },
+  "dependencies": {}
 }

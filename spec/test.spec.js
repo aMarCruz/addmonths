@@ -1,4 +1,5 @@
 /* global addMonths:false, infoDates:false */
+/* eslint-disable no-self-compare */
 
 function utc(y, m, d, hr, min, sec, ms) {
   return new Date(Date.UTC(y, m - 1, d, hr | 0, min | 0, sec | 0, ms | 0))
@@ -33,12 +34,15 @@ function ut(s) {
 
 describe('addMonths', function () {
 
-  it('must returns a new instance if date is valid and count is falsy.', function () {
+  it('If count is evaluated as zero, returns a new Date instance with the same value as startdate', function () {
     var date = new Date()
     var test = new Date(+date)
     var result
 
     result = addMonths(date, 0)
+    expect(result).not.toBe(date)
+    expect(+result).toBe(+test)
+    result = addMonths(date, '0')
     expect(result).not.toBe(date)
     expect(+result).toBe(+test)
     result = addMonths(date, NaN)
@@ -49,17 +53,23 @@ describe('addMonths', function () {
     expect(+result).toBe(+test)
   })
 
-  it('must returns a new instance for empty dates (NaN).', function () {
+  it('If startdate is an invalid date, returns a new Date instance with an invalid date', function () {
     var empty = new Date('@')  // Date object with empty content
+    var rdate = addMonths(empty, 0)
 
-    expect(addMonths(empty, 0)).not.toBe(empty)
+    expect(Object.prototype.toString.call(rdate)).toBe('[object Date]')
+    expect(isNaN(rdate)).toBe(true, 'The expected result must contain NaN')
+    expect(rdate).not.toBe(empty)
   })
 
-  it('must returns the same object for invalid dates.', function () {
+  it('If startdate is not a date, returns startdate without changes', function () {
     var dnum  = 1234567890
     var dobj  = {}
     var dnull = null
     var dstr  = '2015-02-01T00:00:00Z'
+
+    var dnan = addMonths(NaN, 0)
+    expect(dnan !== dnan).toBe(true, 'The expected result is the NaN value')
 
     expect(addMonths(dnum, 0)).toBe(dnum)
     expect(addMonths(dobj, 0)).toBe(dobj)
@@ -74,9 +84,11 @@ describe('addMonths', function () {
     for (var i = 0; i < test.length; i++) {
       info = test[i]
 
+      // within the current timezone
       result = addMonths(dt(info[0]), info[1])
       expect(+result).toBe(+dt(info[2]))
 
+      // with utc timezone
       result = addMonths(ut(info[0]), info[1])
       expect(+result).toBe(+ut(info[2]))
     }

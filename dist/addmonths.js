@@ -5,22 +5,24 @@
 }(this, (function () { 'use strict';
 
 function addMonths(startdate, count) {
-  if (startdate && startdate.getDate) {
-    var date = new Date(+startdate);
-    if (!isNaN(date) && (count |= 0)) {
-      var offset = +startdate - date.setUTCHours(12, 0, 0, 0);
-      var day = date.getUTCDate();
-      date.setUTCMonth(date.getUTCMonth() + count, 2);
-      var month = date.getUTCMonth();
-      date.setUTCDate(day);
-      if (date.getUTCMonth() !== month) {
-        date.setUTCDate(0);
-      }
-      date.setMilliseconds(offset);
-    }
+  var date = startdate && startdate.setUTCDate && new Date(+startdate);
+  if (!(date instanceof Date)) {
+    return startdate
+  }
+  count |= 0;
+  if (!count || isNaN(date)) {
     return date
   }
-  return startdate
+  var offset = +date - date.setUTCHours(12, 0, 0, 0);
+  var day = date.getUTCDate();
+  date.setUTCMonth(date.getUTCMonth() + count, 2);
+  var month = date.getUTCMonth();
+  date.setUTCDate(day);
+  if (date.getUTCMonth() !== month) {
+    date.setUTCDate(0);
+  }
+  date.setMilliseconds(offset);
+  return date
 }
 
 return addMonths;

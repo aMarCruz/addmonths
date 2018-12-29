@@ -8,7 +8,7 @@ const isSaucelabs = process.env.SAUCELABS
 // run the tests only on the saucelabs browsers
 const browsers = isSaucelabs
     ? Object.keys(saucelabsBrowsers) : ['PhantomJS', 'Chrome']*/
-const browsers = ['PhantomJS', 'Chrome', 'Firefox']
+const browsers = ['Chrome', 'Firefox']
 
 module.exports = function (config) {
   config.set({

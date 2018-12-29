@@ -1,12 +1,17 @@
-[![codebeat badge][cq-image]][cq-url]
-[![npm Version][npm-image]][npm-url]
-[![License][license-image]][license-url]
-
 # addMonths
+
+[![npm Version][npm-image]][npm-url]
+[![License][license-image]](LICENSE)
 
 Adds or sustract _X_ months to any JavaScript Date.
 
-Please read the [What's New](#whats-new) section.
+## 🚧 This Package Is Depreacted 🚧
+
+This package is deprecated in favor of [@jsbits/add-months](https://www.npmjs.com/package/@jsbits/add-months).
+
+Unlike addMonths, @jsbits/add-months handles [changes in the timezone](https://www.npmjs.com/package/@jsbits/add-months#note-about-dst) correctly, has better support, 100% coverage, and the version for `Date.prototype` is more consistent with other Date methods.
+
+### This package will no longer be updated
 
 ## Install
 
@@ -36,12 +41,15 @@ browsers
 newdate = addMonths(startdate, count)
 ```
 
-The `addMonths` function returns the date occurring _count_ months after _startdate_ or, if _count_ is negative, the date occurring _count_ months before _startdate_.
+The `addMonths` function returns a date occurring `count` months after `startdate` or, if `count` is negative, the date occurring `count` months before `startdate`.
 
-If _startdate_ is not a date, returns _startdate_ without changes.
+If there is an overflow in the day, the date is adjusted to the last valid day of the expected month.
 
-If _count_ is falsy (i.e. zero), returns a new `Date` object with the same value as _startdate_.
+If `startdate` is not a date, returns `startdate` without changes.
 
+If `startdate` is an invalid date (i.e. `NaN`), returns a new `Date` instance with an invalid date.
+
+If `count` is evaluated as zero, returns a new `Date` instance with the same value as `startdate`.
 
 ### Examples
 
@@ -55,7 +63,7 @@ addMonths(new Date(2016, 0, 31), 0)   // new instance with the same value
 addMonths('2017-06-12', 1)            // the same string
 ```
 
-and if you load addmonths/auto:
+If you prefer, you can inject the function into the `Date` prototype of Date requiring "auto" or by loading the IIFE from "dist/addmonths.auto.js" in your browser:
 
 ```js
 require('addmonths/auto')
@@ -77,7 +85,4 @@ Copyright (c) 2017 Alberto Martínez (https://github.com/aMarCruz)
 
 [npm-image]:      https://img.shields.io/npm/v/addmonths.svg
 [npm-url]:        https://www.npmjs.com/package/addmonths
-[license-image]:  https://img.shields.io/npm/l/express.svg
-[license-url]:    https://github.com/aMarCruz/jscc-brunch/blob/master/LICENSE
-[cq-image]:       https://codebeat.co/badges/c44cf621-7412-4d0d-a132-cf09ee560d48
-[cq-url]:         https://codebeat.co/projects/github-com-amarcruz-addmonths-master
+[license-image]:  https://img.shields.io/npm/l/addmonths.svg
